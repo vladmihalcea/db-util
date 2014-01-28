@@ -2,6 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vladmihalcea</groupId>
     <artifactId>db-util</artifactId>
@@ -24,9 +31,9 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:git://github.com/vladmihalcea/db-util</connection>
-        <tag>0.0.1</tag>
-        <url>https://github.com/vladmihalcea/db-util/releases/tag/0.0.1</url>
+        <connection>scm:git:git:@github.com:vladmihalcea/db-util.git</connection>
+        <developerConnection>scm:git:git:@github.com:vladmihalcea/db-util.git</developerConnection>
+        <url>git@github.com:vladmihalcea/db-util.git</url>
     </scm>
 
     <dependencies>
