@@ -171,6 +171,10 @@
         </plugins>
     </build>
 
+	<!-- 
+	Deploy with:
+	mvn gpg:sign-and-deploy-file -DpomFile=target/db-util-0.0.1.pom -Dfile=target/db-util-0.0.1.jar -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ -DrepositoryId=sonatype-nexus-staging
+	-->
     <distributionManagement>
         <repository>
             <id>sonatype-nexus-staging</id>
