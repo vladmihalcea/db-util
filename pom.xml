@@ -25,7 +25,7 @@
     </developers>
     <scm>
         <connection>scm:git:git://github.com/vladmihalcea/db-util</connection>
-        <tag>1.0</tag>
+        <tag>0.0.1</tag>
         <url>https://github.com/vladmihalcea/db-util</url>
     </scm>
 
@@ -68,7 +68,7 @@
             <version>${datasource-proxy.version}</version>
         </dependency>
 
-        <!-- Spring -->
+        <!-- Provided dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
@@ -97,6 +97,7 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
