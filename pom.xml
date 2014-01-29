@@ -12,7 +12,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vladmihalcea</groupId>
     <artifactId>db-util</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>DB Util</name>
     <description>DB Utilities</description>
@@ -162,26 +162,29 @@
                     </execution>
                 </executions>
             </plugin>
+            <!--
+            To submit snapshots to Maven central
+            mvn clean deploy
+            If you want to create a bundle.jar of the whole release and send it to maven central (https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-UploadStagingBundle)
+            jar -cvf bundle.jar db-util-0.0.1.pom db-util-0.0.1.pom.asc db-util-0.0.1.jar db-util-0.0.1.jar.asc db-util-0.0.1-javadoc.jar db-util-0.0.1-javadoc.jar.asc db-util-0.0.1-sources.jar db-util-0.0.1-sources.jar.asc
+            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
-                        <phase>verify</phase>
+                        <phase>deploy</phase>
                         <goals>
                             <goal>sign</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+
         </plugins>
     </build>
 
-	<!-- 
-	Deploy with:
-	mvn gpg:sign-and-deploy-file -DpomFile=target/db-util-0.0.1.pom -Dfile=target/db-util-0.0.1.jar -Durl=https://oss.sonatype.org/service/local/staging/deploy/maven2/ -DrepositoryId=sonatype-nexus-staging
-	-->
     <distributionManagement>
         <repository>
             <id>sonatype-nexus-staging</id>
