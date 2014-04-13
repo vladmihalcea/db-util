@@ -162,12 +162,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--
-            To submit snapshots to Maven central
-            mvn clean deploy
-            If you want to create a bundle.jar of the whole release and send it to maven central (https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-UploadStagingBundle)
-            jar -cvf bundle.jar db-util-0.0.1.pom db-util-0.0.1.pom.asc db-util-0.0.1.jar db-util-0.0.1.jar.asc db-util-0.0.1-javadoc.jar db-util-0.0.1-javadoc.jar.asc db-util-0.0.1-sources.jar db-util-0.0.1-sources.jar.asc
-            -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
