@@ -166,7 +166,7 @@
             To submit snapshots to Maven central
             mvn clean deploy
             If you want to create a bundle.jar of the whole release and send it to maven central (https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide#SonatypeOSSMavenRepositoryUsageGuide-UploadStagingBundle)
-            jar -cvf bundle.jar db-util-0.0.1.pom db-util-0.0.1.pom.asc db-util-0.0.1.jar db-util-0.0.1.jar.asc db-util-0.0.1-javadoc.jar db-util-0.0.1-javadoc.jar.asc db-util-0.0.1-sources.jar db-util-0.0.1-sources.jar.asc
+            jar -cvf bundle.jar db-config-0.0.1.pom db-config-0.0.1.pom.asc db-config-0.0.1.jar db-config-0.0.1.jar.asc db-config-0.0.1-javadoc.jar db-config-0.0.1-javadoc.jar.asc db-config-0.0.1-sources.jar db-config-0.0.1-sources.jar.asc
             -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -201,8 +201,8 @@
         <aspectj.version>1.6.8</aspectj.version>
         <spring.version>3.2.2.RELEASE</spring.version>
         <commons-lang.version>2.5</commons-lang.version>
-        <datasource-proxy.version>1.2</datasource-proxy.version>
-        <hibernate.version>4.2.6.Final</hibernate.version>
+        <datasource-proxy.version>1.2.1</datasource-proxy.version>
+        <hibernate.version>4.3.8.Final</hibernate.version>
 
         <mockito.version>1.8.5</mockito.version>
         <junit.version>4.8.1</junit.version>
