@@ -34,7 +34,6 @@ import java.util.Arrays;
  * OptimisticConcurrencyControlAspect - Aspect to retry optimistic locking attempts.
  *
  * @author Vlad Mihalcea
- * @see <a href="http://vladmihalcea.com/2013/11/15/optimistic-locking-retry-with-jpa/>http://vladmihalcea.com/2013/11/15/optimistic-locking-retry-with-jpa/</a>
  */
 @Aspect
 public class OptimisticConcurrencyControlAspect {
