@@ -29,8 +29,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static com.vladmihalcea.sql.SQLStatementCountValidator.*;
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.fail;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 /**
  * SQLStatementCountValidatorTest - SQLStatementCountAspect Test
