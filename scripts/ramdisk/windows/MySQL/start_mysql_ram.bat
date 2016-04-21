@@ -1,8 +1,9 @@
 sc stop %MYSQL_SERVICE%
 
-imdisk -D -m R:
-imdisk -a -s 2G -m R: -P  -p "/FS:NTFS /C /Y"
+REM imdisk -D -m R:
+REM imdisk -a -s 1G -m R: -P  -p "/FS:NTFS /C /Y"
 
+rd /s /q R:\
 mkdir R:\data
 xcopy "%MySQL_DATA%\data" "R:\data" /S /E
 
