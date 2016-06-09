@@ -9,8 +9,8 @@ v1.0.0, 2014-01-28
 This library contains all sorts of DB utilities like:
 
 * Optimistic Concurrency Retry
-* JPA SQL statement count validator 
+* JPA SQL statement count validator
 
 == User guide
 
-You can find an unsage example http://vladmihalcea.com/2013/11/15/optimistic-locking-retry-with-jpa/[here].
+You can find usage examples at http://vladmihalcea.com/2013/11/15/optimistic-locking-retry-with-jpa/[here].
