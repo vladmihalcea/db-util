@@ -197,7 +197,7 @@
         <maven.compiler.target>1.6</maven.compiler.target>
 
         <jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
-        <logback.version>1.0.13</logback.version>
+        <logback.version>1.2.3</logback.version>
 
         <aspectj.version>1.6.12</aspectj.version>
         <spring.version>3.2.18.RELEASE</spring.version>
