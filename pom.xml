@@ -193,7 +193,7 @@
         <logback-ext-spring.version>0.1.1</logback-ext-spring.version>
 
         <aspectj.version>1.6.8</aspectj.version>
-        <spring.version>3.2.2.RELEASE</spring.version>
+        <spring.version>3.2.18.RELEASE</spring.version>
         <commons-lang.version>2.5</commons-lang.version>
         <datasource-proxy.version>1.3.1</datasource-proxy.version>
         <hibernate.version>4.3.9.Final</hibernate.version>
