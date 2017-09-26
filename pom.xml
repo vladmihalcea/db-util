@@ -196,7 +196,7 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
 
-        <jcl-over-slf4j.version>1.6.1</jcl-over-slf4j.version>
+        <jcl-over-slf4j.version>1.6.6</jcl-over-slf4j.version>
         <logback.version>1.0.13</logback.version>
         <logback-ext-spring.version>0.1.1</logback-ext-spring.version>
 
