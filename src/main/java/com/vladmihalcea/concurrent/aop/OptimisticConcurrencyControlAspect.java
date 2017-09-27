@@ -57,8 +57,8 @@ public class OptimisticConcurrencyControlAspect {
         Assert.isTrue(retryOn.length > 0, "@Retry{on} should have at least one Throwable!");
         if (retryAnnotation.failInTransaction() && TransactionSynchronizationManager.isActualTransactionActive()) {
             throw new IllegalTransactionStateException(
-                    "You shouldn't retry an operation from withing an existing Transaction." +
-                            "This is because we can't retry if the current Transaction was already rollbacked!");
+                    "You shouldn't retry an operation from within an existing Transaction." +
+                            "This is because we can't retry if the current Transaction was already rolled back!");
         }
         LOGGER.info("Proceed with {} retries on {}", times, Arrays.toString(retryOn));
         return tryProceeding(pjp, times, retryOn);
@@ -69,7 +69,7 @@ public class OptimisticConcurrencyControlAspect {
             return proceed(pjp);
         } catch (Throwable throwable) {
             if (isRetryThrowable(throwable, retryOn) && times-- > 0) {
-                LOGGER.info("Optimistic locking detected, {} remaining retries on {}", times, Arrays.toString(retryOn));
+                LOGGER.info("Optimistic locking detected, {} remaining retr{} on {}", times, (times == 1 ? "y" : "ies"), Arrays.toString(retryOn));
                 return tryProceeding(pjp, times, retryOn);
             }
             throw throwable;
