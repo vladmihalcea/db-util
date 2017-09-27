@@ -8,20 +8,20 @@ package com.vladmihalcea.sql.exception;
  */
 public abstract class SQLStatementCountMismatchException extends RuntimeException {
 
-    private final int expected;
-    private final int recorded;
+    private final long expected;
+    private final long recorded;
 
-    protected SQLStatementCountMismatchException(int expected, int recorded) {
+    protected SQLStatementCountMismatchException(long expected, long recorded) {
         super("Expected " + expected + " statements but recorded " + recorded + " instead!");
         this.expected = expected;
         this.recorded = recorded;
     }
 
-    public int getExpected() {
+    public long getExpected() {
         return expected;
     }
 
-    public int getRecorded() {
+    public long getRecorded() {
         return recorded;
     }
 }
