@@ -8,7 +8,7 @@ package com.vladmihalcea.sql.exception;
  */
 public class SQLSelectCountMismatchException extends SQLStatementCountMismatchException {
 
-    public SQLSelectCountMismatchException(int expected, int recorded) {
+    public SQLSelectCountMismatchException(long expected, long recorded) {
         super(expected, recorded);
     }
 }

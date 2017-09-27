@@ -48,9 +48,9 @@ public class SQLStatementCountValidator {
      *
      * @param expectedSelectCount expected select statement count
      */
-    public static void assertSelectCount(int expectedSelectCount) {
+    public static void assertSelectCount(long expectedSelectCount) {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
-        int recordedSelectCount = queryCount.getSelect();
+        long recordedSelectCount = queryCount.getSelect();
         if (expectedSelectCount != recordedSelectCount) {
             throw new SQLSelectCountMismatchException(expectedSelectCount, recordedSelectCount);
         }
@@ -61,9 +61,9 @@ public class SQLStatementCountValidator {
      *
      * @param expectedInsertCount expected insert statement count
      */
-    public static void assertInsertCount(int expectedInsertCount) {
+    public static void assertInsertCount(long expectedInsertCount) {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
-        int recordedInsertCount = queryCount.getInsert();
+        long recordedInsertCount = queryCount.getInsert();
         if (expectedInsertCount != recordedInsertCount) {
             throw new SQLInsertCountMismatchException(expectedInsertCount, recordedInsertCount);
         }
@@ -74,9 +74,9 @@ public class SQLStatementCountValidator {
      *
      * @param expectedUpdateCount expected update statement count
      */
-    public static void assertUpdateCount(int expectedUpdateCount) {
+    public static void assertUpdateCount(long expectedUpdateCount) {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
-        int recordedUpdateCount = queryCount.getUpdate();
+        long recordedUpdateCount = queryCount.getUpdate();
         if (expectedUpdateCount != recordedUpdateCount) {
             throw new SQLUpdateCountMismatchException(expectedUpdateCount, recordedUpdateCount);
         }
@@ -87,9 +87,9 @@ public class SQLStatementCountValidator {
      *
      * @param expectedDeleteCount expected delete statement count
      */
-    public static void assertDeleteCount(int expectedDeleteCount) {
+    public static void assertDeleteCount(long expectedDeleteCount) {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
-        int recordedDeleteCount = queryCount.getDelete();
+        long recordedDeleteCount = queryCount.getDelete();
         if (expectedDeleteCount != recordedDeleteCount) {
             throw new SQLDeleteCountMismatchException(expectedDeleteCount, recordedDeleteCount);
         }
