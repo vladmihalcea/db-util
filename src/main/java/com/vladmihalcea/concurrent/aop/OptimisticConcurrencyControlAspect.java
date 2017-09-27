@@ -69,7 +69,7 @@ public class OptimisticConcurrencyControlAspect {
             return proceed(pjp);
         } catch (Throwable throwable) {
             if (isRetryThrowable(throwable, retryOn) && times-- > 0) {
-                LOGGER.info("Optimistic locking detected, {} remaining retries on {}", times, Arrays.toString(retryOn));
+                LOGGER.info("Optimistic locking detected, {} remaining retr{} on {}", times, (times == 1 ? "y" : "ies"), Arrays.toString(retryOn));
                 return tryProceeding(pjp, times, retryOn);
             }
             throw throwable;
