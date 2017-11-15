@@ -6,12 +6,12 @@ package com.vladmihalcea.sql.exception;
  *
  * @author Vlad Mihalcea
  */
-public abstract class SQLStatementCountMismatchException extends RuntimeException {
+public abstract class SQLStatementCountMismatchAssertionError extends AssertionError {
 
     private final long expected;
     private final long recorded;
 
-    protected SQLStatementCountMismatchException(long expected, long recorded) {
+    protected SQLStatementCountMismatchAssertionError(long expected, long recorded) {
         super("Expected " + expected + " statements but recorded " + recorded + " instead!");
         this.expected = expected;
         this.recorded = recorded;
