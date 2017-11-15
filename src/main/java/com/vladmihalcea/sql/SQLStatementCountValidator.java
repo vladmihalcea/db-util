@@ -16,10 +16,10 @@
 
 package com.vladmihalcea.sql;
 
-import com.vladmihalcea.sql.exception.SQLDeleteCountMismatchException;
-import com.vladmihalcea.sql.exception.SQLInsertCountMismatchException;
-import com.vladmihalcea.sql.exception.SQLSelectCountMismatchException;
-import com.vladmihalcea.sql.exception.SQLUpdateCountMismatchException;
+import com.vladmihalcea.sql.exception.SQLDeleteCountMismatchAssertionError;
+import com.vladmihalcea.sql.exception.SQLInsertCountMismatchAssertionError;
+import com.vladmihalcea.sql.exception.SQLSelectCountMismatchAssertionError;
+import com.vladmihalcea.sql.exception.SQLUpdateCountMismatchAssertionError;
 import net.ttddyy.dsproxy.QueryCount;
 import net.ttddyy.dsproxy.QueryCountHolder;
 
@@ -52,7 +52,7 @@ public class SQLStatementCountValidator {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
         long recordedSelectCount = queryCount.getSelect();
         if (expectedSelectCount != recordedSelectCount) {
-            throw new SQLSelectCountMismatchException(expectedSelectCount, recordedSelectCount);
+            throw new SQLSelectCountMismatchAssertionError(expectedSelectCount, recordedSelectCount);
         }
     }
 
@@ -65,7 +65,7 @@ public class SQLStatementCountValidator {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
         long recordedInsertCount = queryCount.getInsert();
         if (expectedInsertCount != recordedInsertCount) {
-            throw new SQLInsertCountMismatchException(expectedInsertCount, recordedInsertCount);
+            throw new SQLInsertCountMismatchAssertionError(expectedInsertCount, recordedInsertCount);
         }
     }
 
@@ -78,7 +78,7 @@ public class SQLStatementCountValidator {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
         long recordedUpdateCount = queryCount.getUpdate();
         if (expectedUpdateCount != recordedUpdateCount) {
-            throw new SQLUpdateCountMismatchException(expectedUpdateCount, recordedUpdateCount);
+            throw new SQLUpdateCountMismatchAssertionError(expectedUpdateCount, recordedUpdateCount);
         }
     }
 
@@ -91,7 +91,7 @@ public class SQLStatementCountValidator {
         QueryCount queryCount = QueryCountHolder.getGrandTotal();
         long recordedDeleteCount = queryCount.getDelete();
         if (expectedDeleteCount != recordedDeleteCount) {
-            throw new SQLDeleteCountMismatchException(expectedDeleteCount, recordedDeleteCount);
+            throw new SQLDeleteCountMismatchAssertionError(expectedDeleteCount, recordedDeleteCount);
         }
     }
 }

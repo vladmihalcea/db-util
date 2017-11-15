@@ -16,10 +16,10 @@
 
 package com.vladmihalcea.sql;
 
-import com.vladmihalcea.sql.exception.SQLDeleteCountMismatchException;
-import com.vladmihalcea.sql.exception.SQLInsertCountMismatchException;
-import com.vladmihalcea.sql.exception.SQLSelectCountMismatchException;
-import com.vladmihalcea.sql.exception.SQLUpdateCountMismatchException;
+import com.vladmihalcea.sql.exception.SQLDeleteCountMismatchAssertionError;
+import com.vladmihalcea.sql.exception.SQLInsertCountMismatchAssertionError;
+import com.vladmihalcea.sql.exception.SQLSelectCountMismatchAssertionError;
+import com.vladmihalcea.sql.exception.SQLUpdateCountMismatchAssertionError;
 import com.vladmihalcea.sql.service.CustomerService;
 import org.junit.Before;
 import org.junit.Test;
@@ -64,7 +64,7 @@ public class SQLStatementCountValidatorTest {
             customerService.saveCustomerSelectFailure();
             assertSelectCount(2);
             fail("Should have thrown SQLSelectCountMismatchException!");
-        } catch (SQLSelectCountMismatchException e) {
+        } catch (SQLSelectCountMismatchAssertionError e) {
             assertEquals(3, e.getRecorded());
             assertEquals(2, e.getExpected());
         }
@@ -76,7 +76,7 @@ public class SQLStatementCountValidatorTest {
             customerService.saveCustomerInsertFailure();
             assertInsertCount(2);
             fail("Should have thrown SQLInsertCountMismatchException!");
-        } catch (SQLInsertCountMismatchException e) {
+        } catch (SQLInsertCountMismatchAssertionError e) {
             assertEquals(3, e.getRecorded());
             assertEquals(2, e.getExpected());
         }
@@ -88,7 +88,7 @@ public class SQLStatementCountValidatorTest {
             customerService.saveCustomerUpdateFailure();
             assertUpdateCount(2);
             fail("Should have thrown SQLUpdateCountMismatchException!");
-        } catch (SQLUpdateCountMismatchException e) {
+        } catch (SQLUpdateCountMismatchAssertionError e) {
             assertEquals(3, e.getRecorded());
             assertEquals(2, e.getExpected());
         }
@@ -100,7 +100,7 @@ public class SQLStatementCountValidatorTest {
             customerService.saveCustomerDeleteFailure();
             assertDeleteCount(2);
             fail("Should have thrown SQLDeleteCountMismatchException!");
-        } catch (SQLDeleteCountMismatchException e) {
+        } catch (SQLDeleteCountMismatchAssertionError e) {
             assertEquals(3, e.getRecorded());
             assertEquals(2, e.getExpected());
         }
