@@ -6,9 +6,9 @@ package com.vladmihalcea.sql.exception;
  *
  * @author Vlad Mihalcea
  */
-public class SQLDeleteCountMismatchAssertionError extends SQLStatementCountMismatchAssertionError {
+public class SQLDeleteCountMismatchException extends SQLStatementCountMismatchException {
 
-    public SQLDeleteCountMismatchAssertionError(long expected, long recorded) {
+    public SQLDeleteCountMismatchException(long expected, long recorded) {
         super(expected, recorded);
     }
 }
