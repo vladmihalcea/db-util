@@ -13,4 +13,4 @@ This library contains all sorts of DB utilities like:
 
 == User guide
 
-You can find usage examples at http://vladmihalcea.com/2013/11/15/optimistic-locking-retry-with-jpa/[here].
+You can find usage examples at http://vladmihalcea.com/optimistic-locking-retry-with-jpa/[here].
