@@ -11,4 +11,8 @@ public class SQLSelectCountMismatchException extends SQLStatementCountMismatchEx
     public SQLSelectCountMismatchException(long expected, long recorded) {
         super(expected, recorded);
     }
+
+    public SQLSelectCountMismatchException(String message, long expected, long recorded) {
+        super(message, expected, recorded);
+    }
 }

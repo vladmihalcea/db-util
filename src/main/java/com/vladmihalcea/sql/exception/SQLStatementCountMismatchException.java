@@ -17,6 +17,12 @@ public abstract class SQLStatementCountMismatchException extends AssertionError 
         this.recorded = recorded;
     }
 
+    protected SQLStatementCountMismatchException(String message, long expected, long recorded) {
+        super(message + ".\nExpected " + expected + " statements but recorded " + recorded + " instead!");
+        this.expected = expected;
+        this.recorded = recorded;
+    }
+
     public long getExpected() {
         return expected;
     }
