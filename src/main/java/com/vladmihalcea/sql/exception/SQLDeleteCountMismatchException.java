@@ -11,4 +11,8 @@ public class SQLDeleteCountMismatchException extends SQLStatementCountMismatchEx
     public SQLDeleteCountMismatchException(long expected, long recorded) {
         super(expected, recorded);
     }
+
+    public SQLDeleteCountMismatchException(String message, long expected, long recorded) {
+        super(message, expected, recorded);
+    }
 }

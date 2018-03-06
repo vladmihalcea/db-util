@@ -11,4 +11,8 @@ public class SQLInsertCountMismatchException extends SQLStatementCountMismatchEx
     public SQLInsertCountMismatchException(long expected, long recorded) {
         super(expected, recorded);
     }
+
+    public SQLInsertCountMismatchException(String message, long expected, long recorded) {
+        super(message, expected, recorded);
+    }
 }

@@ -11,4 +11,8 @@ public class SQLUpdateCountMismatchException extends SQLStatementCountMismatchEx
     public SQLUpdateCountMismatchException(long expected, long recorded) {
         super(expected, recorded);
     }
+
+    public SQLUpdateCountMismatchException(String message, long expected, long recorded) {
+        super(message, expected, recorded);
+    }
 }
