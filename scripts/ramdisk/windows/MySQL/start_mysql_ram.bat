@@ -7,4 +7,4 @@ rd /s /q R:\
 mkdir R:\data
 xcopy "%MySQL_DATA%\data" "R:\data" /S /E
 
-"%MySQL_HOME%\bin\mysqld" --defaults-file="%MySQL_DATA%\my_ram.ini"
+"%MySQL_HOME%\bin\mysqld" --defaults-file="%CD%\my_ram.ini"
