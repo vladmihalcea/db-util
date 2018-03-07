@@ -55,18 +55,7 @@
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
             <version>${jcl-over-slf4j.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjweaver</artifactId>
-            <version>${aspectj.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${commons-lang.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -101,6 +90,13 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -275,11 +271,10 @@
         <jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
         <logback.version>1.2.3</logback.version>
 
-        <aspectj.version>1.6.12</aspectj.version>
-        <spring.version>3.2.18.RELEASE</spring.version>
-        <commons-lang.version>2.6</commons-lang.version>
+        <aspectj.version>1.8.13</aspectj.version>
+        <spring.version>4.3.14.RELEASE</spring.version>
         <datasource-proxy.version>1.4.7</datasource-proxy.version>
-        <hibernate.version>4.3.11.Final</hibernate.version>
+        <hibernate.version>5.1.6.Final</hibernate.version>
 
         <mockito.version>1.10.19</mockito.version>
         <junit.version>4.12</junit.version>

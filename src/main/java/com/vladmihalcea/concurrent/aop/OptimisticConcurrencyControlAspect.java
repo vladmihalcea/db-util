@@ -18,7 +18,6 @@ package com.vladmihalcea.concurrent.aop;
 
 import com.vladmihalcea.concurrent.Retry;
 import com.vladmihalcea.util.ReflectionUtils;
-import org.apache.commons.lang.exception.ExceptionUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -77,14 +76,21 @@ public class OptimisticConcurrencyControlAspect {
     }
 
     private boolean isRetryThrowable(Throwable throwable, Class<? extends Throwable>[] retryOn) {
-        Throwable[] causes = ExceptionUtils.getThrowables(throwable);
-        for (Throwable cause : causes) {
+        Throwable cause = throwable;
+        do {
             for (Class<? extends Throwable> retryThrowable : retryOn) {
                 if (retryThrowable.isAssignableFrom(cause.getClass())) {
                     return true;
                 }
             }
+
+            if(cause.getCause() == null || cause.getCause() == cause) {
+                break;
+            } else {
+                cause = cause.getCause();
+            }
         }
+        while ( true );
         return false;
     }
 }
