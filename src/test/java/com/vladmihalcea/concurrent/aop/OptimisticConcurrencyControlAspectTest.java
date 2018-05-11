@@ -20,6 +20,7 @@ import com.vladmihalcea.concurrent.exception.OptimisticLockingException;
 import com.vladmihalcea.concurrent.service.CustomerService;
 import com.vladmihalcea.concurrent.service.ItemService;
 import com.vladmihalcea.concurrent.service.ProductService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +49,13 @@ public class OptimisticConcurrencyControlAspectTest {
     @Autowired
     private ItemService itemService;
 
+    @Before
+    public void before() {
+        productService.resetRegisterCalls();
+        customerService.resetRegisterCalls();
+        itemService.resetRegisterCalls();
+    }
+
     @Test
     public void testRetryOnInterface() {
         assertEquals(0, productService.getRegisteredCalls());
@@ -65,6 +73,26 @@ public class OptimisticConcurrencyControlAspectTest {
         assertEquals(0, customerService.getRegisteredCalls());
         try {
             customerService.saveCustomer();
+        } catch (OptimisticLockingException expected) {
+        }
+        assertEquals(3, customerService.getRegisteredCalls());
+    }
+
+    @Test
+    public void testRetryOnImplementationWithArgs() {
+        assertEquals(0, customerService.getRegisteredCalls());
+        try {
+            customerService.saveCustomer("User A", "client");
+        } catch (OptimisticLockingException expected) {
+        }
+        assertEquals(3, customerService.getRegisteredCalls());
+    }
+
+    @Test
+    public void testRetryOnImplementationWithNullArg() {
+        assertEquals(0, customerService.getRegisteredCalls());
+        try {
+            customerService.saveCustomer("Unknown user", null);
         } catch (OptimisticLockingException expected) {
         }
         assertEquals(3, customerService.getRegisteredCalls());
@@ -94,4 +122,6 @@ public class OptimisticConcurrencyControlAspectTest {
             TransactionSynchronizationManager.setActualTransactionActive(false);
         }
     }
+
+
 }

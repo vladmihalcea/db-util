@@ -24,4 +24,6 @@ package com.vladmihalcea.concurrent.service;
 public interface BaseService {
 
     int getRegisteredCalls();
+
+    void resetRegisterCalls();
 }

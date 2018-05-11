@@ -24,4 +24,6 @@ package com.vladmihalcea.concurrent.service;
 public interface CustomerService extends BaseService {
 
     void saveCustomer();
+
+    void saveCustomer(String name, String type);
 }
