@@ -37,4 +37,9 @@ public class BaseServiceImpl implements BaseService {
     public int getRegisteredCalls() {
         return calls;
     }
+
+    @Override
+    public void resetRegisterCalls() {
+        this.calls = 0;
+    }
 }

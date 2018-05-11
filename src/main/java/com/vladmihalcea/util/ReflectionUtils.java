@@ -39,11 +39,7 @@ public class ReflectionUtils {
             return annotation;
         }
 
-        Class[] argClasses = new Class[pjp.getArgs().length];
-        for (int i = 0; i < pjp.getArgs().length; i++) {
-            argClasses[i] = pjp.getArgs()[i].getClass();
-        }
-        method = pjp.getTarget().getClass().getMethod(pjp.getSignature().getName(), argClasses);
+        method = pjp.getTarget().getClass().getMethod(pjp.getSignature().getName(), signature.getParameterTypes());
         return AnnotationUtils.findAnnotation(method, annotationClass);
     }
 }

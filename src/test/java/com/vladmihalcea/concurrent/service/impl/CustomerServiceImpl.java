@@ -40,4 +40,12 @@ public class CustomerServiceImpl extends BaseServiceImpl implements CustomerServ
         LOGGER.info("Save Customer!");
         throw new OptimisticLockingException("Save Customer!");
     }
+
+    @Override
+    @Retry(times = 2, on = OptimisticLockingException.class)
+    public void saveCustomer(String name, String type) {
+        incrementCalls();
+        LOGGER.info("Save Customer {}:{}!", name, type);
+        throw new OptimisticLockingException("Save Customer!");
+    }
 }
