@@ -16,7 +16,7 @@ You can get the framework from Maven Central by using the following dependency:
     <dependency>
         <groupId>com.vladmihalcea</groupId>
         <artifactId>db-util</artifactId>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
     </dependency>
 
 ### User guide
