@@ -303,11 +303,11 @@
 
         <aspectj.version>1.8.13</aspectj.version>
         <spring.version>4.3.14.RELEASE</spring.version>
-        <datasource-proxy.version>1.4.7</datasource-proxy.version>
+        <datasource-proxy.version>1.6</datasource-proxy.version>
         <hibernate.version>5.1.6.Final</hibernate.version>
 
         <mockito.version>1.10.19</mockito.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
 
         <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
