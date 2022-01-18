@@ -299,11 +299,11 @@
         <maven.compiler.target>1.6</maven.compiler.target>
 
         <jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.2.7</logback.version>
 
         <aspectj.version>1.8.13</aspectj.version>
         <spring.version>4.3.14.RELEASE</spring.version>
-        <datasource-proxy.version>1.6</datasource-proxy.version>
+        <datasource-proxy.version>1.7</datasource-proxy.version>
         <hibernate.version>5.1.6.Final</hibernate.version>
 
         <mockito.version>1.10.19</mockito.version>
