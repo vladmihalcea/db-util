@@ -37,40 +37,28 @@
 
     <dependencies>
 
-        <!-- Required dependencies -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>${logback.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
-            <version>${jcl-over-slf4j.version}</version>
-            <scope>provided</scope>
-        </dependency>
-
+        <!-- Transitive dependencies -->
         <dependency>
             <groupId>net.ttddyy</groupId>
             <artifactId>datasource-proxy</artifactId>
             <version>${datasource-proxy.version}</version>
         </dependency>
 
-        <!-- Provided dependencies -->
+        <!-- Optional dependencies -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+            <scope>provided</scope>
+            <optional>true</optional>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>${spring.version}</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -78,6 +66,7 @@
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -85,6 +74,7 @@
             <artifactId>spring-tx</artifactId>
             <version>${spring.version}</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -92,6 +82,7 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
         <dependency>
@@ -99,6 +90,7 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectj.version}</version>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
 
         <!-- Test dependencies -->
@@ -121,6 +113,13 @@
             <artifactId>spring-test</artifactId>
             <version>${spring.version}</version>
             <type>jar</type>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -298,12 +297,12 @@
         <maven.compiler.source>1.6</maven.compiler.source>
         <maven.compiler.target>1.6</maven.compiler.target>
 
-        <jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
-        <logback.version>1.2.7</logback.version>
+        <slf4j.version>1.7.36</slf4j.version>
+        <logback.version>1.2.11</logback.version>
 
         <aspectj.version>1.8.13</aspectj.version>
         <spring.version>4.3.14.RELEASE</spring.version>
-        <datasource-proxy.version>1.7</datasource-proxy.version>
+        <datasource-proxy.version>1.8</datasource-proxy.version>
         <hibernate.version>5.1.6.Final</hibernate.version>
 
         <mockito.version>1.10.19</mockito.version>
