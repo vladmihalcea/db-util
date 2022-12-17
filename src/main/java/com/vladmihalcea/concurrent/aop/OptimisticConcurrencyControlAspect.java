@@ -60,16 +60,29 @@ public class OptimisticConcurrencyControlAspect {
                             "This is because we can't retry if the current Transaction was already rolled back!");
         }
         LOGGER.info("Proceed with {} retries on {}", times, Arrays.toString(retryOn));
-        return tryProceeding(pjp, times, retryOn);
+        return tryProceeding(pjp, times, retryOn, retryAnnotation, retryAnnotation.delay());
     }
 
-    private Object tryProceeding(ProceedingJoinPoint pjp, int times, Class<? extends Throwable>[] retryOn) throws Throwable {
+    private Object tryProceeding(ProceedingJoinPoint pjp, int times, Class<? extends Throwable>[] retryOn,
+                                 Retry retryAnnotation, int delay) throws Throwable {
         try {
             return proceed(pjp);
         } catch (Throwable throwable) {
             if (isRetryThrowable(throwable, retryOn) && times-- > 0) {
                 LOGGER.info("Optimistic locking detected, {} remaining retr{} on {}", times, (times == 1 ? "y" : "ies"), Arrays.toString(retryOn));
-                return tryProceeding(pjp, times, retryOn);
+                if (delay > 0) {
+                    try {
+                        LOGGER.info("Sleeping for {} ms.", delay);
+                        Thread.sleep(delay);
+                        if (retryAnnotation.progressiveDelay()) {
+                            delay += retryAnnotation.delay();
+                        }
+                    } catch (InterruptedException e) {
+                        LOGGER.debug("Thread is interrupted.", e);
+                        Thread.currentThread().interrupt();
+                    }
+                }
+                return tryProceeding(pjp, times, retryOn, retryAnnotation, delay);
             }
             throw throwable;
         }

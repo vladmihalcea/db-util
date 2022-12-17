@@ -48,4 +48,19 @@ public @interface Retry {
      * @return fail in case of a running transaction
      */
     boolean failInTransaction() default true;
+
+    /**
+     * Retry after delay in milliseconds
+     *
+     * @return delay for next attempt
+     */
+    int delay() default 0;
+
+    /**
+     * Increase delay for the next attempt. If delay is 50 for the first 
+     * attempt then for the second will be 100, for third 150.
+     *
+     * @return increase delay for the next attempt
+     */
+    boolean progressiveDelay() default false;
 }
