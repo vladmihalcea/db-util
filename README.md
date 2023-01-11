@@ -2,6 +2,10 @@
 [![Maven Central](https://img.shields.io/maven-central/v/com.vladmihalcea/db-util.svg)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.vladmihalcea%22)
 [![JavaDoc](http://javadoc.io/badge/com.vladmihalcea/db-util.svg)](http://www.javadoc.io/doc/com.vladmihalcea/db-util)
 
+## Merged into Hypersistence Utils
+
+The `db-utils` project was discontinued because it was merged into [Hypersistence Utils](https://github.com/vladmihalcea/hypersistence-utils/).
+
 ### Introduction
 
 This library contains all sorts of DB utilities like:
